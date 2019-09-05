@@ -9,7 +9,6 @@
 
   // SQLの組み立て
   $sql = "SELECT * FROM users WHERE email ='$email' AND password = '$password'";
-  var_dump($sql);
   $ps = $db->query($sql); 
 ?>
 <html>

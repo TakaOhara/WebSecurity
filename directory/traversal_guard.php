@@ -1,6 +1,6 @@
 <?php
   define('FILEDIR', '../file/');
-  $file = basename(filter_input(INPUT_GET, 'template'));
+  $file = basename(filter_input(INPUT_GET, 'file'));
 ?>
 <body>
 <?php readfile(FILEDIR . $file . '.html'); ?>

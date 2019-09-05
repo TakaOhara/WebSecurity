@@ -4,3 +4,4 @@ http://localhost/websecurity/direcrory/traversal.php?file=course
 ディレクトリトラバーサル
 http://localhost/websecurity/direcrory/traversal.php?file=../secret/hosts
 本来はファイル拡張子を取り除くための「%00」を入れる
+PHPでは%00はNULLにならないためこの攻撃は不可

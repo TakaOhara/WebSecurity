@@ -1,6 +1,10 @@
 <?php
   header('Content-Type: text/html; charset=UTF-8');
-  $author = $_GET['author'];
+  if(isset($_GET['author'])){
+      $author = $_GET['author'];
+  }else{
+      $author = "";
+  }
   try {
     $db = new PDO("mysql:host=localhost;dbname=websec", "root", "");
     $db->query("Set names utf8");

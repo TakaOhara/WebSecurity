@@ -21,10 +21,10 @@ CREATE TABLE users (
     password VARCHAR (70)
 );
 
-INSERT INTO books VALUES (1, '夏の夜の夢','Shakespeare', 600);
-INSERT INTO books VALUES (2, 'ハムレット','Shakespeare', 1260);
-INSERT INTO books VALUES (3, 'マクベス','Shakespeare',  1530);
-INSERT INTO books VALUES (4, 'リア王','Shakespeare',1890);
+INSERT INTO books VALUES (1, 'PHP入門','鈴木太郎', 2000);
+INSERT INTO books VALUES (2, 'WEBセキュリティ','佐藤花子', 3500);
+INSERT INTO books VALUES (3, 'Java入門','中村次郎',  2300);
+INSERT INTO books VALUES (4, 'AI概論','田中涼子',3100);
 
 INSERT INTO users VALUES (1, 'suzuki@example.jp', 'pass');
 INSERT INTO users VALUES (2, 'takana@example.com','pass123');
