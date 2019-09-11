@@ -1,21 +1,23 @@
 <?php
-  session_start();
-  header('Content-Type: text/html; charset=UTF-8');
-  $email = @$_POST['email'];  
-  $password = @$_POST['password']; 
 
-  // データベースに接続
-  $opt = array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
+require_once('../config/db_config.php');
+session_start();
+header('Content-Type: text/html; charset=UTF-8');
+$email = @$_POST['email'];  
+$password = @$_POST['password']; 
+
+// データベースに接続
+$opt = array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
                  PDO::MYSQL_ATTR_MULTI_STATEMENTS => false,
                  PDO::ATTR_EMULATE_PREPARES => false);
-  $db = new PDO("mysql:host=localhost;dbname=websec;charset=utf8", "root", "", $opt);
+$db = new PDO(DSN, DB_USER, DB_PASSWORD, $opt);
 
   // SQLの組み立て
-  $sql = "SELECT * FROM users WHERE email = ? AND password = ?";
-  $ps = $db->prepare($sql);
-  $ps->bindValue(1, $email, PDO::PARAM_STR);
-  $ps->bindValue(2, $password, PDO::PARAM_STR);
-  $ps->execute();
+$sql = "SELECT * FROM users WHERE email = ? AND password = ?";
+$ps = $db->prepare($sql);
+$ps->bindValue(1, $email, PDO::PARAM_STR);
+$ps->bindValue(2, $password, PDO::PARAM_STR);
+$ps->execute();
 
 ?>
 <html>

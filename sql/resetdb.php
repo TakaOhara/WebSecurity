@@ -1,9 +1,11 @@
 <?php
-  header('Content-Type: text/html; charset=UTF-8');
-  $db = new PDO("mysql:host=localhost;dbname=websec;charset=utf8", "root", "");
-  $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-  $db->query("SET NAMES utf8");
-  $sql = <<<EOS
+require_once('../config/db_config.php');
+header('Content-Type: text/html; charset=UTF-8');
+
+$db = new PDO(DSN, DB_USER, DB_PASSWORD, $opt);
+$db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+$db->query("SET NAMES utf8");
+$sql = <<<EOS
 
 DROP TABLE IF EXISTS books;
 DROP TABLE IF EXISTS users;
@@ -31,9 +33,9 @@ INSERT INTO users VALUES (2, 'takana@example.com','pass123');
 INSERT INTO users VALUES (3, 'sato@example.net', 'password');
 
 EOS;
-
-  $db->query($sql);
+$db->query($sql);
 ?>
 <body>
-データベースをリセットしました
+<p>データベースをリセットしました</p>
+<p><a href="index.html">戻る</a></p>
 </body>
